@@ -1,0 +1,35 @@
+
+.pg-status-active {
+  background-color: green;
+  color: white;
+}
+
+.pg-status-inactive {
+  background-color: gray;
+  color: black;
+}
+
+.kuzu-app-container {margin-left:5px;}
+
+.kuzu-app-container #kuzu-timestamp {
+        margin-top: 0.5em;
+      }
+
+ .kuzu-app-container [title="output"] {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+ .kuzu-app-container table {
+        margin-top: 1em;
+        margin-left: 0.4em;
+        margin-right: 0.4em;
+        border-collapse: collapse;
+      }
+
+ .kuzu-app-container td, th {
+        border: 1px solid #999;
+        padding: 0.5rem;
+        text-align: left;
+      }

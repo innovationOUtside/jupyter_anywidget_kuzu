@@ -1,0 +1,12 @@
+{
+	"scripts": {
+		"dev": "npm run build -- --sourcemap=inline --watch",
+		"build": "esbuild js/*.js --minify --format=esm --bundle --outdir=src/jupyter_anywidget_kuzu/static  --loader:.html=text"
+	},
+	"dependencies": {
+		"kuzu-wasm": "^0.9.0"
+	},
+	"devDependencies": {
+		"esbuild": "^0.25.1"
+	}
+}

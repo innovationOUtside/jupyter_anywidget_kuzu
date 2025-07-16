@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "jupyter_anywidget_kuzu"
+version = "0.0.1"
+dependencies = ["anywidget"]
+readme = "README.md"
+
+[project.urls]
+Repository = "https://github.com/innovationOUtside/jupyter_anywidget_kuzu"
+Homepage="https://github.com/innovationOUtside/jupyter_anywidget_kuzu"
+
+# For projects not using `uv`, you can install these development dependencies with:
+# `pip install -e ".[dev]"`
+# If you're using `uv` for development, feel free to remove this section.
+[project.optional-dependencies]
+dev = ["watchfiles", "jupyterlab"]
+
+# Dependency groups (recognized by `uv`). For more details, visit:
+# https://peps.python.org/pep-0735/
+[dependency-groups]
+dev = ["watchfiles", "jupyterlab"]
+
+
+[tool.hatch.build]
+only-packages = true
+artifacts = ["src/jupyter_anywidget_kuzu/static/*"]
+
+[tool.hatch.build.hooks.jupyter-builder]
+build-function = "hatch_jupyter_builder.npm_builder"
+ensured-targets = ["src/jupyter_anywidget_kuzu/static/kuzu.js"]
+dependencies = ["hatch-jupyter-builder>=0.5.0"]
+
+[tool.hatch.build.hooks.jupyter-builder.build-kwargs]
+npm = "npm"
+build_cmd = "build"
